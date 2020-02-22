@@ -1,0 +1,36 @@
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 8px 16px;
+  background: #3f51b5;
+  color: #ffffff;
+  a {
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+  }
+  .icon-page {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    img {
+      height: 26px;
+      margin: 0 4px 3px 0;
+    }
+  }
+}
