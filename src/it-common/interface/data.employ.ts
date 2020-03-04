@@ -1,4 +1,4 @@
 export interface Data {
   status: string;
-  data: Array;
+  data: any;
 }

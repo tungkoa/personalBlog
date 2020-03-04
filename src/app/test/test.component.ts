@@ -3,7 +3,7 @@ import { Test1ServiceService } from '../../it-common/service/test1-service.servi
 import { DummyService } from '../../it-common/api/dummy.service';
 import {filter, first, map} from 'rxjs/operators';
 import { Data } from '../../it-common/interface/data.employ';
-import {interval, Observable} from 'rxjs';
+import {fromEvent, interval, Observable} from 'rxjs';
 import {Info} from '../../it-common/interface/info.employ';
 
 @Component({
@@ -19,24 +19,23 @@ export class TestComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
   }
 
   public get() {
-    console.log(1);
+      const eventClick = fromEvent(document, 'keydown') as Observable<KeyboardEvent>;
+      eventClick.subscribe(event => {
+          if (event.ctrlKey) {
+              console.log(1);
+          }
+      })
     const observable: Observable<any> = this.dummyService.getAllEmploy();
     observable.pipe( map(res  => {
       return res.data;
     })).subscribe(observer => {
       this.listEmploy = observer;
-      console.log(observer);
       console.log('list', this.listEmploy);
    });
-
-    let aaa: Observable<any> = interval(1000);
-    aaa.subscribe(observer => {
-      console.log('observer');
-    })
-    console.log(aaa);
   }
 
 }

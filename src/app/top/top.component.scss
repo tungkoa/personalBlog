@@ -1,0 +1,43 @@
+
+.wrapper {
+  position: relative;
+  .page-header {
+    background-color: #B2AFAB;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .presentation-title {
+      font-size: 8em;
+      font-weight: 700;
+      margin: 0;
+      color: #fff;
+      background: linear-gradient(to bottom,#fff 35%,#4e6773 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .moving-clouds {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 250.625em;
+    height: 43.75em;
+    -webkit-animation: cloudLoop 80s linear infinite;
+    animation: cloudLoop 80s linear infinite;
+  }
+}
+
+@keyframes cloudLoop{
+  0%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+  100%{-webkit-transform:translate3d(-50%,0,0);
+    transform:translate3d(-50%,0,0)}
+}
